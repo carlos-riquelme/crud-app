@@ -5,9 +5,9 @@ const Table = ({ employees, handleEdit, handleDelete }) => {
     employee.id = i + 1;
   });
 
-  const formatter = new Intl.NumberFormat('en-US', {
+  const formatter = new Intl.NumberFormat('es-CL', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'CLP',
     minimumFractionDigits: null,
   });
 
@@ -17,13 +17,13 @@ const Table = ({ employees, handleEdit, handleDelete }) => {
         <thead>
           <tr>
             <th>No.</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
             <th>Email</th>
-            <th>Salary</th>
-            <th>Date</th>
+            <th>Salario</th>
+            <th>Fecha</th>
             <th colSpan={2} className="text-center">
-              Actions
+              Acciones
             </th>
           </tr>
         </thead>
@@ -42,7 +42,7 @@ const Table = ({ employees, handleEdit, handleDelete }) => {
                     onClick={() => handleEdit(employee.id)}
                     className="button muted-button"
                   >
-                    Edit
+                    Editar
                   </button>
                 </td>
                 <td className="text-left">
@@ -50,14 +50,14 @@ const Table = ({ employees, handleEdit, handleDelete }) => {
                     onClick={() => handleDelete(employee.id)}
                     className="button muted-button"
                   >
-                    Delete
+                    Borrar
                   </button>
                 </td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan={7}>No Employees</td>
+              <td colSpan={7}>N° Empleados</td>
             </tr>
           )}
         </tbody>
